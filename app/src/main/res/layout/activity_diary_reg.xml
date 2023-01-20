@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="100dp"
+    android:paddingRight="30dp"
+    android:paddingLeft="30dp"
+    tools:context=".DiaryReg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="60sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="날짜" />
+        <TextView
+            android:id="@+id/edtDate"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="날짜 선택" />
+        <ImageButton
+            android:src="@drawable/calendar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"
+            android:text="달력" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="60sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="날씨" />
+        <RadioGroup
+            android:id="@+id/weather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <RadioButton
+                android:id="@+id/sunny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="맑음" />
+            <RadioButton
+                android:id="@+id/cloudy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="흐림" />
+            <RadioButton
+                android:id="@+id/rainy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="비" />
+            <RadioButton
+                android:id="@+id/snowy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="눈" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="60sp"
+            android:layout_height="wrap_content"
+            android:text="MBTI" />
+        <TextView
+            android:id="@+id/edtMBTI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="오늘의 MBTI"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/edtDiary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="12"
+            android:hint="오늘의 MBTI 일기를 작성해 주세요"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="등록" />
+    </LinearLayout>
+
+</LinearLayout>
