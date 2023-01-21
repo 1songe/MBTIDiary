@@ -80,6 +80,7 @@
             android:id="@+id/edtMBTI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:enabled="false"
             android:text="오늘의 MBTI"/>
     </LinearLayout>
 
@@ -91,7 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:lines="12"
-            android:hint="오늘의 MBTI 일기를 작성해 주세요"/>
+            android:hint="오늘의 일기를 작성해 주세요"/>
     </LinearLayout>
 
     <LinearLayout

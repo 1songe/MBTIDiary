@@ -5,11 +5,32 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.TextView
 
 class MBTIResult : AppCompatActivity() {
+    lateinit var edtMBTI: TextView
+
+    lateinit var btnWriteDiary: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mbtiresult)
+
+        var mbti = intent.getStringExtra("mbti")
+
+        edtMBTI = findViewById(R.id.edtMBTI)
+
+        btnWriteDiary = findViewById(R.id.btnWriteDiary)
+
+        edtMBTI.text = mbti + "!"
+
+        btnWriteDiary.setOnClickListener {
+            var intent = Intent(this, DiaryReg::class.java)
+            intent.putExtra("mbti", mbti)
+            startActivity(intent)
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

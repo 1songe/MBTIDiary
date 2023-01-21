@@ -22,7 +22,7 @@
         android:id="@+id/edtMBTI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MBTI!"
+        android:text="XXXX!"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,7 +35,8 @@
         android:id="@+id/edtMBTIExp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="해당 MBTI에 대한 간단한 설명"
+        android:text="몇 가지 질문에 답을 못하셨군요!\n괜찮아요. 그래도 일기는 작성할 수 있으니까요 :)"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +45,7 @@
 
     <ImageView
         android:id="@+id/imageView"
+        android:src="@drawable/unknown"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:scaleType="fitXY"
@@ -51,8 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65"
-        tools:src="@drawable/isfp" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <Button
         android:id="@+id/btnWriteDiary"

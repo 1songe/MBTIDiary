@@ -5,11 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 
 class DiaryReg : AppCompatActivity() {
+    lateinit var edtMBTI: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diary_reg)
+
+        edtMBTI = findViewById(R.id.edtMBTI)
+
+        var mbti = intent.getStringExtra("mbti")
+        edtMBTI.text = mbti
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
