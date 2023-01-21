@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MBTIDiary</string>
+    <string name="action_home">홈</string>
+    <string name="action_list">다이어리 목록</string>
+    <string name="action_reg">다이어리 등록</string>
+    <string name="action_test">MBTI 테스트</string>
+    <string name="action_stat">통계</string>
+    <string name="action_remove">삭제</string>
 </resources>
