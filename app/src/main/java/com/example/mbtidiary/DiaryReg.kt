@@ -51,16 +51,10 @@ class DiaryReg : AppCompatActivity() {
         btnCalendar = findViewById(R.id.btnCalendar)
         btnRegister = findViewById(R.id.btnRegister)
 
+        dbManager = DBManager(this, "mbtiDiaryDB", null, 1)
+
         var mbti = intent.getStringExtra("mbti")
         edtMBTI.text = mbti
-
-//        val myCalendar = Calendar.getInstance()
-//
-//        val datePickerDialog = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-//            myCalendar.set(Calendar.YEAR, year)
-//            myCalendar.set(Calendar.MONTH, month)
-//            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-//        }
 
         var calendar = Calendar.getInstance()
         var year = calendar.get(Calendar.YEAR)
@@ -81,10 +75,19 @@ class DiaryReg : AppCompatActivity() {
 
             when (rWeather.checkedRadioButtonId) {
                 R.id.sunny -> str_weather = sunny.text.toString()
+                R.id.cloudy -> str_weather = cloudy.text.toString()
                 R.id.rainy -> str_weather = rainy.text.toString()
                 R.id.snowy -> str_weather = snowy.text.toString()
                 else -> str_weather = "날씨 선택 안 함"
             }
+
+            sqlitedb = dbManager.writableDatabase
+            sqlitedb.execSQL("INSERT INTO mbtiDiary VALUES ('" + str_date + "', '" + str_weather + "', '" + mbti + "', '" + str_diary + "')")
+            sqlitedb.close()
+
+            val intent = Intent(this, DiaryInfo::class.java)
+            intent.putExtra("date", str_date)
+            startActivity(intent)
         }
     }
 

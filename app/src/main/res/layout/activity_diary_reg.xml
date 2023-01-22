@@ -89,12 +89,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
-        <EditText
-            android:id="@+id/edtDiary"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:lines="12"
-            android:hint="오늘의 일기를 작성해 주세요"/>
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:fillViewport="true" >
+            <EditText
+                android:id="@+id/edtDiary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:lines="12"
+                android:hint="오늘의 일기를 작성해 주세요"/>
+        </ScrollView>
+
     </LinearLayout>
 
     <LinearLayout
