@@ -88,6 +88,7 @@ class DiaryInfo : AppCompatActivity() {
         edtWeather.text = str_weather
         edtMBTI.text = mbti
         edtDiary.text = str_diary
+        if (edtDiary.text == "") edtDiary.text = "작성한 일기 없음"
 
         btnRemove.setOnClickListener {
             dbManager = DBManager(this, "mbtiDiaryDB", null, 1)

@@ -35,7 +35,7 @@
         android:id="@+id/edtMBTIExp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="몇 가지 질문에 답을 못하셨군요!\n일기는 작성할 수 있으나 통계에는 반영이 안 됩니다.\n메뉴의 MBTI 테스트를 눌러 다시 검사할 수 있습니다 :)"
+        android:text="몇 가지 질문에 답을 안 하셨군요!\n일기는 작성할 수 있으나 통계에는 반영이 안 됩니다.\n메뉴의 MBTI 테스트를 눌러 다시 검사할 수 있습니다 :)"
         android:textAlignment="center"
         android:paddingHorizontal="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
