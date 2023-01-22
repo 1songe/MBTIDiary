@@ -18,19 +18,21 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="날짜" />
-        <TextView
-            android:id="@+id/edtDate"
-            android:layout_width="150sp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="날짜 선택" />
         <ImageButton
+            android:id="@+id/btnCalendar"
             android:src="@drawable/calendar"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
             android:text="달력" />
+        <TextView
+            android:id="@+id/edtDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:text="클릭하여 날짜 선택" />
     </LinearLayout>
 
     <LinearLayout
@@ -42,7 +44,7 @@
             android:layout_gravity="center_vertical"
             android:text="날씨" />
         <RadioGroup
-            android:id="@+id/weather"
+            android:id="@+id/rWeather"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
