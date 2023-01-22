@@ -62,6 +62,7 @@
                     android:background="#ffffff"
                     android:text="ISFP" />
                 <TextView
+                    android:id="@+id/tISFP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -85,6 +86,7 @@
                     android:background="#ffffff"
                     android:text="ISFJ" />
                 <TextView
+                    android:id="@+id/tISFJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -108,6 +110,7 @@
                     android:background="#ffffff"
                     android:text="ISTP" />
                 <TextView
+                    android:id="@+id/tISTP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -131,6 +134,7 @@
                     android:background="#ffffff"
                     android:text="ISTJ" />
                 <TextView
+                    android:id="@+id/tISTJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -154,6 +158,7 @@
                     android:background="#ffffff"
                     android:text="INFP" />
                 <TextView
+                    android:id="@+id/tINFP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -177,6 +182,7 @@
                     android:background="#ffffff"
                     android:text="INFJ" />
                 <TextView
+                    android:id="@+id/tINFJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -200,6 +206,7 @@
                     android:background="#ffffff"
                     android:text="INTP" />
                 <TextView
+                    android:id="@+id/tINTP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -224,6 +231,7 @@
                     android:background="#ffffff"
                     android:text="INTJ" />
                 <TextView
+                    android:id="@+id/tINTJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -281,12 +289,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_marginLeft="3dp"
-
                     android:gravity="center"
                     android:padding="3dp"
                     android:background="#ffffff"
                     android:text="ESFP" />
                 <TextView
+                    android:id="@+id/tESFP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -311,6 +319,7 @@
                     android:background="#ffffff"
                     android:text="ESFJ" />
                 <TextView
+                    android:id="@+id/tESFJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -335,6 +344,7 @@
                     android:background="#ffffff"
                     android:text="ESTP" />
                 <TextView
+                    android:id="@+id/tESTP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -359,6 +369,7 @@
                     android:background="#ffffff"
                     android:text="ESTJ" />
                 <TextView
+                    android:id="@+id/tESTJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -383,6 +394,7 @@
                     android:background="#ffffff"
                     android:text="ENFP" />
                 <TextView
+                    android:id="@+id/tENFP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -407,6 +419,7 @@
                     android:background="#ffffff"
                     android:text="ENFJ" />
                 <TextView
+                    android:id="@+id/tENFJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -431,6 +444,7 @@
                     android:background="#ffffff"
                     android:text="ENTP" />
                 <TextView
+                    android:id="@+id/tENTP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -456,6 +470,7 @@
                     android:background="#ffffff"
                     android:text="ENTJ" />
                 <TextView
+                    android:id="@+id/tENTJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -478,6 +493,7 @@
         android:layout_marginTop="20dp">
 
         <ImageView
+            android:id="@+id/imgMBTI"
             android:src="@drawable/unknown"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -494,6 +510,7 @@
                 android:layout_gravity="center"
                 android:text="당신은 대체로" />
             <TextView
+                android:id="@+id/tMBTI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -510,6 +527,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
