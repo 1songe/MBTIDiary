@@ -28,7 +28,7 @@
             android:src="@drawable/calendar"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:scaleType="fitXY"
+            android:scaleType="fitCenter"
             android:background="@android:color/transparent"
             android:text="달력" />
     </LinearLayout>
