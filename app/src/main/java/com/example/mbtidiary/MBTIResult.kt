@@ -30,7 +30,7 @@ class MBTIResult : AppCompatActivity() {
 
         edtMBTI.text = mbti + "!"
 
-        when(mbti) {
+        when(mbti) { // 해당 결과의 MBTI에 대한 간단한 설명 표시 및 걸맞는 이미지 표시
             "ISFP" -> { edtMBTIExp.text = "\"호기심 많은 예술가\"\n항시 새로운 것을 찾아 시도하거나 도전형 준비가 되어 있는 융통성 있는 성격의 매력 넘치는 예술가형"; imgMBTI.setImageResource(R.drawable.isfp) }
             "ISFJ" -> { edtMBTIExp.text = "\"용감한 수호자\"\n소중한 이들을 수호하는 데 심혈을 기울이는 헌신적이며\n성실한 방어자형"; imgMBTI.setImageResource(R.drawable.isfj) }
             "ISTP" -> { edtMBTIExp.text = "\"만능 재주꾼\"\n대담하고 현실적인 성향으로 다양한 도구 사용에 능숙한\n탐험형"; imgMBTI.setImageResource(R.drawable.istp) }
@@ -49,9 +49,9 @@ class MBTIResult : AppCompatActivity() {
             "ENTJ" -> { edtMBTIExp.text = "\"대담한 통솔자\"\n대담하면서도 상상력이 풍부한 강한 의지의 소유자로 다양한 방법을 모색하거나 여의치 않을 경우 새로운 방안을 창출하는 리더형"; imgMBTI.setImageResource(R.drawable.entj) }
         }
 
-        btnWriteDiary.setOnClickListener {
+        btnWriteDiary.setOnClickListener { // 일기 작성 화면으로 전환
             var intent = Intent(this, DiaryReg::class.java)
-            intent.putExtra("mbti", mbti)
+            intent.putExtra("mbti", mbti) // 검사한 결과의 MBTI 정보 전달
             startActivity(intent)
         }
 
@@ -64,22 +64,22 @@ class MBTIResult : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
-            R.id.action_home -> {
+            R.id.action_home -> { // 메인 화면으로 전환
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_test -> {
+            R.id.action_test -> { // MBTI 테스트 화면으로 전환
                 val intent = Intent(this, MBTITest::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_list -> {
+            R.id.action_list -> { // 목록 화면으로 전환
                 val intent = Intent(this, DiaryList::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_stat -> {
+            R.id.action_stat -> { // 통계 화면으로 전환
                 val intent = Intent(this, MBTIStatics::class.java)
                 startActivity(intent)
                 return true

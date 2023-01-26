@@ -32,6 +32,7 @@ class DiaryList : AppCompatActivity() {
         var num: Int = 0
         while (cursor.moveToNext()) {
 
+            // 각각의 정보 추출
             var str_date = cursor.getString(cursor.getColumnIndexOrThrow("date")).toString()
             var str_weather = cursor.getString(cursor.getColumnIndexOrThrow("weather")).toString()
             var mbti = cursor.getString(cursor.getColumnIndexOrThrow("MBTI")).toString()
@@ -63,7 +64,7 @@ class DiaryList : AppCompatActivity() {
             edtDiary.setPadding(30, 0, 30, 0)
             layout_item.addView(edtDiary)
 
-            layout_item.setOnClickListener {
+            layout_item.setOnClickListener { // 선택 시 해당 일기로 이동
                 val intent = Intent(this, DiaryInfo::class.java)
                 intent.putExtra("date", str_date)
                 startActivity(intent)
@@ -85,17 +86,17 @@ class DiaryList : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
-            R.id.action_home -> {
+            R.id.action_home -> { // 메인 화면으로 전환
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_test -> {
+            R.id.action_test -> { // MBTI 테스트 화면으로 전환
                 val intent = Intent(this, MBTITest::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_stat -> {
+            R.id.action_stat -> { // 통계 화면으로 전환
                 val intent = Intent(this, MBTIStatics::class.java)
                 startActivity(intent)
                 return true

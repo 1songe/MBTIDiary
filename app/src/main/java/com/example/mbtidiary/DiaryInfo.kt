@@ -56,16 +56,16 @@ class DiaryInfo : AppCompatActivity() {
         cursor = sqlitedb.rawQuery("SELECT * FROM mbtiDiary WHERE date = '" + str_date + "';", null)
 
         if (cursor.moveToNext()) {
-            str_weather = cursor.getString(cursor.getColumnIndexOrThrow("weather")).toString()
-            mbti = cursor.getString(cursor.getColumnIndexOrThrow("MBTI")).toString()
-            str_diary = cursor.getString(cursor.getColumnIndexOrThrow("diary")).toString()
+            str_weather = cursor.getString(cursor.getColumnIndexOrThrow("weather")).toString() // 날씨 정보 추출
+            mbti = cursor.getString(cursor.getColumnIndexOrThrow("MBTI")).toString() // MBTI 정보 추출
+            str_diary = cursor.getString(cursor.getColumnIndexOrThrow("diary")).toString() // 일기 내용 추출
         }
 
         cursor.close()
         sqlitedb.close()
         dbManager.close()
 
-        when(mbti) {
+        when(mbti) { // MBTI별 추천 노래 설정 및 이미지 표시
             "ISFP" -> { edtMusic.text = "백예린 - Bye Bye my Blue"; imgMBTI.setImageResource(R.drawable.isfp) }
             "ISFJ" -> { edtMusic.text = "블랙핑크 – Forever Young"; imgMBTI.setImageResource(R.drawable.isfj) }
             "ISTP" -> { edtMusic.text = "Dosii – Love me more"; imgMBTI.setImageResource(R.drawable.istp) }
@@ -88,9 +88,9 @@ class DiaryInfo : AppCompatActivity() {
         edtWeather.text = str_weather
         edtMBTI.text = mbti
         edtDiary.text = str_diary
-        if (edtDiary.text == "") edtDiary.text = "작성한 일기 없음"
+        if (edtDiary.text == "") edtDiary.text = "작성한 일기 없음" // 작성한 일기가 없는 경우
 
-        btnRemove.setOnClickListener {
+        btnRemove.setOnClickListener { // 삭제 버튼
             dbManager = DBManager(this, "mbtiDiaryDB", null, 1)
             sqlitedb = dbManager.readableDatabase
 
@@ -99,12 +99,12 @@ class DiaryInfo : AppCompatActivity() {
             dbManager.close()
 
             val intent = Intent(this, DiaryList::class.java)
-            startActivity(intent)
+            startActivity(intent) // 목록 화면으로 전환
         }
 
-        btnList.setOnClickListener {
+        btnList.setOnClickListener { // 목록 버튼
             val intent = Intent(this,  DiaryList::class.java)
-            startActivity(intent)
+            startActivity(intent) // 목록 화면으로 전환
         }
 
     }
@@ -116,27 +116,27 @@ class DiaryInfo : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
-            R.id.action_home -> {
+            R.id.action_home -> { // 메인 화면으로 전환
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_test -> {
+            R.id.action_test -> { // MBTI 테스트 화면으로 전환
                 val intent = Intent(this, MBTITest::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_list -> {
+            R.id.action_list -> { // 목록 화면으로 전환
                 val intent = Intent(this, DiaryList::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_stat -> {
+            R.id.action_stat -> { // 통계 화면으로 전환
                 val intent = Intent(this, MBTIStatics::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_remove -> {
+            R.id.action_remove -> { // 해당 일기 삭제 및 목록 화면으로 전환
                 dbManager = DBManager(this, "mbtiDiaryDB", null, 1)
                 sqlitedb = dbManager.readableDatabase
 

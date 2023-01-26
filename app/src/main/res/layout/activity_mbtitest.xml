@@ -5,20 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="100dp"
+    android:paddingTop="80dp"
     android:paddingRight="16dp"
     android:paddingLeft="16dp"
     tools:context=".MBTITest">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:text="오늘의 MBTI 간단 테스트"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/green_700" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="15dp">
+
         <TextView
             android:layout_width="70sp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="나는 오늘..." />
+            android:text="나는 오늘..."
+            android:textColor="@color/teal_700"
+            android:textStyle="bold" />
         <RadioGroup
             android:id="@+id/IorE"
             android:layout_width="match_parent"
@@ -46,11 +59,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="15dp" >
+
         <TextView
-            android:layout_width="110sp"
+            android:layout_width="90sp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="아무 생각하지 마!" />
+            android:text="생각 안 하기?"
+            android:textColor="@color/teal_700"
+            android:textStyle="bold" />
         <RadioGroup
             android:id="@+id/SorN"
             android:layout_width="match_parent"
@@ -60,7 +76,7 @@
                 android:id="@+id/mbtiS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="멍...\n(생각 안 함)" />
+                android:text="멍...\n(아무 생각 없음)" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,11 +94,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="15dp" >
+
         <TextView
             android:layout_width="70sp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="카톡 읽씹..." />
+            android:text="카톡 읽씹..."
+            android:textColor="@color/teal_700"
+            android:textStyle="bold" />
         <RadioGroup
             android:id="@+id/ForT"
             android:layout_width="match_parent"
@@ -110,11 +129,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="15dp" >
+
         <TextView
             android:layout_width="80sp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="오늘의 계획?" />
+            android:text="오늘의 계획?"
+            android:textColor="@color/teal_700"
+            android:textStyle="bold" />
         <RadioGroup
             android:id="@+id/PorJ"
             android:layout_width="match_parent"
@@ -134,7 +156,7 @@
                 android:id="@+id/mbtiJ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="미션 complete!" />
+                android:text="이미 다 세웠지~" />
         </RadioGroup>
     </LinearLayout>
 

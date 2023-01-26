@@ -509,13 +509,16 @@
                 android:layout_marginTop="30dp"
                 android:layout_gravity="center"
                 android:text="당신은 대체로" />
+
             <TextView
                 android:id="@+id/tMBTI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="XXXX"
-                android:textSize="36dp"/>
+                android:textColor="@color/green_700"
+                android:textSize="36dp"
+                android:textStyle="bold" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

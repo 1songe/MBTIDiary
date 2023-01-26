@@ -72,14 +72,14 @@ class MBTIStatics : AppCompatActivity() {
         cursor = sqlitedb.rawQuery("SELECT * FROM mbtiDiary", null)
 
         val mbtiTypes = arrayOf("ISFP", "ISFJ", "ISTP", "ISTJ", "INFP", "INFJ", "INTP", "INTJ",
-            "ESFP", "ESFJ", "ESTP", "ESTJ", "ENFP", "ENFJ", "ENTP", "ENTJ")
-        var nMBTI = arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+            "ESFP", "ESFJ", "ESTP", "ESTJ", "ENFP", "ENFJ", "ENTP", "ENTJ") // 16가지의 MBTI 타입
+        var nMBTI = arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) // 각 MBTI이 나온 횟수
 
-        for (i in mbtiTypes.indices) {
-            while (cursor.moveToNext()) {
-                mbti = cursor.getString(cursor.getColumnIndexOrThrow("MBTI")).toString()
+        for (i in mbtiTypes.indices) { // 각 MBTI 타입에 대해
+            while (cursor.moveToNext()) { // DB의 각 레코드에 대해
+                mbti = cursor.getString(cursor.getColumnIndexOrThrow("MBTI")).toString() // MBTI 정보 추출
 
-                if (mbti == mbtiTypes[i]) nMBTI[i]++
+                if (mbti == mbtiTypes[i]) nMBTI[i]++ // 현재 검사하는 MBTI와 레코드의 MBTI가 일치하는 경우 해당 MBTI가 나온 횟수 증가
             }
             cursor.moveToPosition(-1) // cursor를 첫 행 이전으로 이동
         }
@@ -88,6 +88,7 @@ class MBTIStatics : AppCompatActivity() {
         sqlitedb.close()
         dbManager.close()
 
+        // 각 MBTI가 나온 횟수를 화면에 표시(업데이트)
         tISFP.text = nMBTI[0].toString()
         tISFJ.text = nMBTI[1].toString()
         tISTP.text = nMBTI[2].toString()
@@ -123,7 +124,7 @@ class MBTIStatics : AppCompatActivity() {
             else mbti = mbtiTypes[max] + " 외 " + count.toString()
         }
 
-        when(mbti) {
+        when(mbti) { // 최대 빈도 MBTI에 해당하는 이미지 표시
             "ISFP" -> imgMBTI.setImageResource(R.drawable.isfp)
             "ISFJ" -> imgMBTI.setImageResource(R.drawable.isfj)
             "ISTP" -> imgMBTI.setImageResource(R.drawable.istp)
@@ -143,9 +144,9 @@ class MBTIStatics : AppCompatActivity() {
             else -> imgMBTI.setImageResource(R.drawable.unknown)
         }
 
-        tMBTI.text = mbti
+        tMBTI.text = mbti // 최대 빈도 MBTI 결과 표시
 
-        btnMain.setOnClickListener {
+        btnMain.setOnClickListener { // 메인 화면으로 전환
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -158,17 +159,17 @@ class MBTIStatics : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
-            R.id.action_home -> {
+            R.id.action_home -> { // 메인 화면으로 전환
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_test -> {
+            R.id.action_test -> { // MBTI 테스트 화면으로 전환
                 val intent = Intent(this, MBTITest::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_list -> {
+            R.id.action_list -> { // 목록 화면으로 전환
                 val intent = Intent(this, DiaryList::class.java)
                 startActivity(intent)
                 return true

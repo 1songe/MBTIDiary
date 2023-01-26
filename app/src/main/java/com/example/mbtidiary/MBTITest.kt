@@ -22,7 +22,7 @@ class MBTITest : AppCompatActivity() {
     lateinit var btnResult: Button
 
     var mbti = ""
-    var a = arrayOf<String>("X", "X", "X", "X")
+    var a = arrayOf<String>("X", "X", "X", "X") // MBTI의 각 자리에 해당하는 유형(I/E, S/N, F/T, P/J)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,22 +40,27 @@ class MBTITest : AppCompatActivity() {
         btnResult = findViewById(R.id.btnResult)
 
         btnResult.setOnClickListener {
+            // 첫 번째 라디오 그룹에 해당하는 라디오버튼 선택 결과에 따라 I/E 유형 결정
             if (mbtiI.isChecked) a[0] = "I"
             else if(mbtiE.isChecked) a[0] = "E"
 
+            // 두 번째 라디오 그룹에 해당하는 라디오버튼 선택 결과에 따라 S/N 유형 결정
             if (mbtiS.isChecked) a[1] = "S"
             else if(mbtiN.isChecked) a[1] = "N"
 
+            // 세 번째 라디오 그룹에 해당하는 라디오 버튼 선택 결과에 따라 F/T 유형 결정
             if (mbtiF.isChecked) a[2] = "F"
             else if(mbtiT.isChecked) a[2] = "T"
 
+            // 네 번째 라디오 그룹에 해당하는 라디오 버튼 선택 결과에 따라 P/J 유형 결정
             if (mbtiP.isChecked) a[3] = "P"
             else if(mbtiJ.isChecked) a[3] = "J"
 
-            for (c in a) {
+            for (c in a) { // 각 자리의 유형을 다 합친 결과를 하나의 MBTI 유형으로 표시
                 mbti += c
             }
 
+            // 결과로 나온 해당 MBTI를 전달하며 검사 결과 화면으로 전환
             var intent = Intent(this, MBTIResult::class.java)
             intent.putExtra("mbti", mbti)
             startActivity(intent)
@@ -69,17 +74,17 @@ class MBTITest : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
-            R.id.action_home -> {
+            R.id.action_home -> { // 메인 화면으로 전환
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_list -> {
+            R.id.action_list -> { // 목록 화면으로 전환
                 val intent = Intent(this, DiaryList::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_stat -> {
+            R.id.action_stat -> { // 통계 화면으로 전환
                 val intent = Intent(this, MBTIStatics::class.java)
                 startActivity(intent)
                 return true
