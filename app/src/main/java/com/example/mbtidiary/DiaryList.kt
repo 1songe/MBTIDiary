@@ -59,10 +59,10 @@ class DiaryList : AppCompatActivity() {
             edtMBTI.setPadding(30, 0, 30, 0)
             layout_item.addView(edtMBTI)
 
-            var edtDiary: TextView = TextView(this)
-            edtDiary.text = str_diary
-            edtDiary.setPadding(30, 0, 30, 0)
-            layout_item.addView(edtDiary)
+//            var edtDiary: TextView = TextView(this)
+//            edtDiary.text = str_diary
+//            edtDiary.setPadding(30, 0, 30, 0)
+//            layout_item.addView(edtDiary)
 
             layout_item.setOnClickListener { // 선택 시 해당 일기로 이동
                 val intent = Intent(this, DiaryInfo::class.java)

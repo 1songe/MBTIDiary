@@ -74,6 +74,8 @@ class DiaryReg : AppCompatActivity() {
             var str_weather: String = ""
             var str_diary = edtDiary.text.toString()
 
+            if (str_date == "클릭하여 날짜 선택") str_date = "날짜 선택 안 함" // 날짜 선택 안 한 경우
+
             when (rWeather.checkedRadioButtonId) { // 날씨 정보 추출
                 R.id.sunny -> str_weather = sunny.text.toString()
                 R.id.cloudy -> str_weather = cloudy.text.toString()
